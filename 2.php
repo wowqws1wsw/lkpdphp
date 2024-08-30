@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('Asia/Jakarta');
 $hariIni = date("l");
 
 $totalPembelian = 130000;
