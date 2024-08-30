@@ -19,7 +19,7 @@ if ($totalPembelian > 100000) {
 
 $totalSetelahDiskon = $totalPembelian - ($totalPembelian * $diskon);
 
-
+echo "hari ini adalah: " . $hariIni . "<br>";
 echo "Total pembelian: " . number_format($totalPembelian, 0, ',', '.') . " IDR<br>";
 echo "Diskon: " . ($diskon * 100) . "%<br>";
 echo "Total yang harus dibayar: " . number_format($totalSetelahDiskon, 0, ',', '.') . " IDR";
