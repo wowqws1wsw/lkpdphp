@@ -67,7 +67,6 @@
                 }
             }
 
-            // Menampilkan hasil
             if (!empty($foundSymbols)) {
                 echo '<p class="result">Karakter yang terdapat pada kalimat: ' . implode(", ", $foundSymbols) . '</p>';
             } else {
