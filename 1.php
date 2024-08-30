@@ -57,7 +57,7 @@
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sentence = $_POST['sentence'];
 
-            $symbols = ['!', '*', '$','-'];
+            $symbols = ['!', '*', '$','-','%','^','&','*','(',')','#'];
 
             $foundSymbols = [];
 
