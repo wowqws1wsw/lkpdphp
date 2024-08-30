@@ -1,36 +1,31 @@
 <?php
-
 $barang = [
     [
-        'nama_barang' => 'pasta gigi',
-        'harga_barang' => 18000,
-        'jumlah_beli' => 1,
+        'nama' => 'Pasta Gigi',
+        'harga' => 18000,
+        'jumlahBeli' => 1,
     ],
     [
-        'nama_barang' => 'sabun mandi',
-        'harga_barang' => 5000,
-        'jumlah_beli' => 3,
+        'nama' => 'Sabun Mandi',
+        'harga' => 5000,
+        'jumlahBeli' => 3,
     ],
     [
-        'nama_barang' => 'Aloe Vera Sheet Mask',
-        'harga_barang' => 15000,
-        'jumlah_beli' => 4,
+        'nama' => 'Aloe Vera Sheet Mask',
+        'harga' => 15000,
+        'jumlahBeli' => 4,
     ],
 ];
-
-
-$total_harga = 0;
-
-
-echo "Daftar Belanjaan:<br>";
-$index = 1;
+$totalHar = 0;
+echo "Daftar Belanjaan :";
+echo "<ol>";
 foreach ($barang as $item) {
-    $subtotal = $item['harga_barang'] * $item['jumlah_beli'];
-    $total_harga += $subtotal;
-    echo $index . ". " . ucfirst($item['nama_barang']) . " (" . $item['jumlah_beli'] . ") : Rp " . number_format($subtotal, 0, ',', '.') . "<br>";
-    $index++;
+    $subTot = $item['harga'] * $item['jumlahBeli'];
+    $totalHar += $subTot;
+    $formatSub = number_format($subTot, 0, ',', '.');
+    echo "<li>{$item['nama']} ({$item['jumlahBeli']}) : {$formatSub}</li>";
 }
-
-
-echo "<br>Total harga yang harus dibayar adalah: Rp " . number_format($total_harga, 0, ',', '.') . "<br>";
+echo "</ol>";
+$formatTot = number_format($totalHar, 0, ',', '.');
+echo "Total harga yang harus Anda bayar adalah Rp. {$formatTot}\n";
 ?>
