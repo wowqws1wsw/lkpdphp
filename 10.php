@@ -2,19 +2,27 @@
 
 $jawabanBenar = ['A', 'D', 'C', 'C', 'B', 'A', 'E', 'B', 'A', 'E'];
 
-
+//$namaSiswa: Digunakan untuk menyimpan dan menampilkan nama siswa.
 $namaSiswa = '';
+//$jawabanSiswa: Array yang akan menyimpan jawaban siswa setelah diinputkan dari form dan dipecah berdasarkan koma.
 $jawabanSiswa = [];
+//$jumlahBenar: Array yang menyimpan jawaban benar dari soal.
 $jumlahBenar = 0;
+//jumlahsalah array yang menyimpan jawaban salah dari soal
 $jumlahSalah = 0;
 
 
+//$_SERVER['REQUEST_METHOD']: Memeriksa apakah metode pengiriman data yang digunakan adalah POST, yang menandakan bahwa data form sudah dikirim.
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
+//htmlspecialchars(): Digunakan untuk membersihkan input dari siswa agar tidak terinjeksi kode yang berbahaya.
+//($_POST['name']); nama siswa di form
+//($_POST['answers'])); jawaban siswa di form
+//explode: memecah string menjadi array berdasarkan pemisah (separator) tertentu. 
     $namaSiswa = htmlspecialchars($_POST['name']);
     $jawabanSiswa = explode(',', htmlspecialchars($_POST['answers']));
 
-
+// count menghitung jumlah salah dan benar
+// trim Digunakan untuk menghilangkan spasi tambahan pada jawaban siswa, sehingga kesalahan karena spasi bisa dihindari.
     if (count($jawabanSiswa) != count($jawabanBenar)) {
         die('Jumlah jawaban tidak sesuai dengan jumlah soal.');
     }
